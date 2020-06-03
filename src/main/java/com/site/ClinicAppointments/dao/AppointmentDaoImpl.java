@@ -53,7 +53,7 @@ public class AppointmentDaoImpl implements AppointmentDao{
             appointment.setGender(updatedAppointment.getGender());
             appointment.setPhoneNumber(updatedAppointment.getPhoneNumber());
             appointment.setEmail(updatedAppointment.getEmail());
-            appointment.setDate(updatedAppointment.getDate());
+            appointment.setAppointmentDate(updatedAppointment.getAppointmentDate());
             appointment.setAddress(updatedAppointment.getAddress());
             appointment.setDoctor(updatedAppointment.getDoctor());
             return repository.save(appointment);

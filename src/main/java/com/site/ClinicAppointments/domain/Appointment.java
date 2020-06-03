@@ -1,7 +1,6 @@
 package com.site.ClinicAppointments.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -11,7 +10,7 @@ import java.util.Date;
 public class Appointment {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private long id;
 
     @Column
@@ -34,7 +33,7 @@ public class Appointment {
     @NotNull(message = "Date is mandatory")
     @Future(message = "Date must be in the future")
     @JsonFormat(pattern="yyyy-MM-dd")
-    private Date date;
+    private Date appointmentDate;
 
     @NotBlank(message = "Address is mandatory")
     @Pattern(regexp = "^[a-zA-Z\\s]{3,50}$" , message = "Address must be between 3 to 50 characters")
@@ -47,12 +46,12 @@ public class Appointment {
     public Appointment() {
     }
 
-    public Appointment(String fullName, String gender, String phoneNumber, String email, Date date, String address, String doctor) {
+    public Appointment(String fullName, String gender, String phoneNumber, String email, Date appointmentDate, String address, String doctor) {
         this.fullName = fullName;
         this.gender = gender;
         this.phoneNumber = phoneNumber;
         this.email = email;
-        this.date = date;
+        this.appointmentDate = appointmentDate;
         this.address = address;
         this.doctor = doctor;
     }
@@ -94,12 +93,12 @@ public class Appointment {
         this.email = email;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getAppointmentDate() {
+        return appointmentDate;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setAppointmentDate(Date date) {
+        this.appointmentDate = date;
     }
 
     public String getAddress() {
@@ -126,7 +125,7 @@ public class Appointment {
                 ", gender='" + gender + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", email='" + email + '\'' +
-                ", date=" + date +
+                ", date=" + appointmentDate +
                 ", address='" + address + '\'' +
                 ", doctor='" + doctor + '\'' +
                 '}';
