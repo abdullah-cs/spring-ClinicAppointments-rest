@@ -48,7 +48,15 @@ public class AppointmentDaoImpl implements AppointmentDao{
     public Appointment update(Appointment updatedAppointment , long id) {
 
         if(repository.existsById(id)){
-            return repository.save(updatedAppointment);
+            Appointment appointment = findById(id);
+            appointment.setFullName(updatedAppointment.getFullName());
+            appointment.setGender(updatedAppointment.getGender());
+            appointment.setPhoneNumber(updatedAppointment.getPhoneNumber());
+            appointment.setEmail(updatedAppointment.getEmail());
+            appointment.setDate(updatedAppointment.getDate());
+            appointment.setAddress(updatedAppointment.getAddress());
+            appointment.setDoctor(updatedAppointment.getDoctor());
+            return repository.save(appointment);
         }
         else{
             return null;
