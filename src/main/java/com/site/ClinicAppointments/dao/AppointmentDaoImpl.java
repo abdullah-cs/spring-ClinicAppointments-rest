@@ -45,9 +45,16 @@ public class AppointmentDaoImpl implements AppointmentDao{
     }
 
     @Override
-    public Appointment update(Appointment updatedAppointment) {
+    public Appointment update(Appointment updatedAppointment , long id) {
 
+        if(repository.existsById(id)){
             return repository.save(updatedAppointment);
+        }
+        else{
+            return null;
+        }
+
+
 
     }
 

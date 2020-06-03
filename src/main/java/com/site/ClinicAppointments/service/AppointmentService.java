@@ -12,7 +12,7 @@ public interface AppointmentService {
 
     List<Appointment> findAll();
 
-    Appointment update(Appointment updatedAppointment);
+    Appointment update(Appointment updatedAppointment, long id);
 
     boolean delete(long id);
 

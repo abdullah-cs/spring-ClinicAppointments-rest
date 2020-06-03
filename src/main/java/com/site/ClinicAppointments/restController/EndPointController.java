@@ -1,10 +1,10 @@
-package com.site.ClinicAppointments.dao;
+package com.site.ClinicAppointments.restController;
 
 import com.site.ClinicAppointments.domain.Appointment;
 
 import java.util.List;
 
-public interface AppointmentDao {
+public interface EndPointController {
 
     Appointment add(Appointment appointment);
 
@@ -12,7 +12,8 @@ public interface AppointmentDao {
 
     List<Appointment> findAll();
 
-    Appointment update(Appointment updatedAppointment , long id);
+    Appointment update(Appointment updatedAppointment, long id);
 
     boolean delete(long id);
+
 }
