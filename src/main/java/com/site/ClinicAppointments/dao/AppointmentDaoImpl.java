@@ -16,13 +16,10 @@ public class AppointmentDaoImpl implements AppointmentDao{
     private AppointmentRepository repository;
 
     @Override
-    public boolean add(Appointment appointment) {
-        if (!repository.existsById(appointment.getId())) {
-            repository.save(appointment);
-            return true;
-        } else {
-            return false;
-        }
+    public Appointment add(Appointment appointment) {
+
+        return repository.save(appointment);
+
     }
 
     @Override
@@ -48,14 +45,10 @@ public class AppointmentDaoImpl implements AppointmentDao{
     }
 
     @Override
-    public boolean update(Appointment updatedAppointment) {
+    public Appointment update(Appointment updatedAppointment) {
 
-        if (repository.existsById(updatedAppointment.getId())) {
-            repository.save(updatedAppointment);
-            return true;
-        } else {
-            return false;
-        }
+            return repository.save(updatedAppointment);
+
     }
 
     @Override

@@ -12,7 +12,7 @@ public class AppointmentServiceImpl implements AppointmentService {
     private AppointmentDao dao;
 
     @Override
-    public boolean add(Appointment appointment) {
+    public Appointment add(Appointment appointment) {
         return dao.add(appointment);
     }
 
@@ -27,7 +27,7 @@ public class AppointmentServiceImpl implements AppointmentService {
     }
 
     @Override
-    public boolean update(Appointment updatedAppointment) {
+    public Appointment update(Appointment updatedAppointment) {
         return dao.update(updatedAppointment);
     }
 
