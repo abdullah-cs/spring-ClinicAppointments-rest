@@ -3,9 +3,11 @@ package com.site.ClinicAppointments.service;
 import com.site.ClinicAppointments.dao.AppointmentDao;
 import com.site.ClinicAppointments.domain.Appointment;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class AppointmentServiceImpl implements AppointmentService {
 
     @Autowired
