@@ -16,7 +16,7 @@ public class Appointment {
 
     @Column
     @NotBlank(message = "Name is mandatory")
-    @Pattern(regexp = "^[a-zA-Z\\s]{3,30}$" , message = "Name must be between 3 to 30 characters")
+    @Pattern(regexp = "^[a-zA-Z\\s-]{3,30}$" , message = "Name must be between 3 to 30 characters")
     private String fullName;
 
     @NotBlank(message = "Gender is mandatory")
@@ -34,10 +34,11 @@ public class Appointment {
     @NotNull(message = "Date is mandatory")
     @Future(message = "Date must be in the future")
     @JsonFormat(pattern="yyyy-MM-dd")
+    @Temporal(TemporalType.DATE)
     private Date appointmentDate;
 
     @NotBlank(message = "Address is mandatory")
-    @Pattern(regexp = "^[a-zA-Z\\s]{3,50}$" , message = "Address must be between 3 to 50 characters")
+    @Pattern(regexp = "^[a-zA-Z\\s\\d-]{3,50}$" , message = "Address must be between 3 to 50 characters")
     private String address;
 
     @NotBlank(message = "Doctor is mandatory")
