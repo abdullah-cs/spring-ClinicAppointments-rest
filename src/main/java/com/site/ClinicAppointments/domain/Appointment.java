@@ -34,7 +34,6 @@ public class Appointment {
     @NotNull(message = "Date is mandatory")
     @Future(message = "Date must be in the future")
     @JsonFormat(pattern="yyyy-MM-dd")
-    @Temporal(TemporalType.DATE)
     private Date appointmentDate;
 
     @NotBlank(message = "Address is mandatory")
